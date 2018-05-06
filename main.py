@@ -53,7 +53,6 @@ def password_manager():
 
 
 
-
 def main_run():
     print("Welcome to SECURA")
     time.sleep(1)
