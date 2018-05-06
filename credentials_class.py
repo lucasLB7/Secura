@@ -1,6 +1,7 @@
 import unittest
-import readfiles
-class User_credentials():
+
+
+class Credentials():
 
     list_of_credentials = []
 
@@ -11,13 +12,17 @@ class User_credentials():
         self.password_cr = password_cr
 
 
+    def save_credentials(self):
+        Credentials.list_of_credentials.append(self)
 
-class TestReadFiles(unittest.TestCase):
-    """
-    Class to test the  functions on the  readfiles module
+    def delete_credentials(self):
+        Credentials.list_of_credentials.remove(self)
 
-    Args:
-        unittest.TestCase: Class from the unittest module to create unit tests
-    """
-if __name__ == "__main__":
-    unittest.main()
+
+    def test_get_data(self):
+        """
+        Test case to confirm that we are getting data from the file
+        """
+        with open("test.txt","r") as handle:
+            data = handle.read()
+            self.assertEqual(data,readfiles.read_file("test.txt"))
