@@ -1,5 +1,6 @@
 #!/usr/bin/env python3.6
 from user_class import User
+from credentials_class import Credentials
 import time
 
 def create_user(u_name,p_word):
