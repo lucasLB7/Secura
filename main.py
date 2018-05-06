@@ -33,6 +33,8 @@ def display_users():
 def valid_user():
     return User.valid_user()
 
+def random_user():
+
 def user_validation():
     if valid_user():
         print("enter your unsername: ")
@@ -47,10 +49,7 @@ def user_validation():
                 print(pass_list)
                 password_manager()
 
-def password_manager():
-    for user in valid_user():
-        print("Succesfully logged in, welcome to the password manager",user.user_name)
-        print("\nUse the following short codes: \nna - Create a new password,\nsp - Search passwords by website,\nvp - view passwords,\ndp - Delete password")
+
 
 
 
@@ -104,6 +103,20 @@ def main_run():
 
         elif short_code == "li":
             user_validation()
+
+
+
+def password_manager():
+    for user in valid_user():
+        print("Succesfully logged in, welcome to the password manager",user.user_name)
+        while True:
+            print("\nUse the following short codes: \nnp - Create a new password,\nsp - Search passwords by website,\nvp - view passwords,\ndp - Delete password")
+            short_code = input().lower()
+
+            if short_code == 'np':
+                pass
+
+
 
 def access_passwords():
     pass
