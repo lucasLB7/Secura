@@ -1,5 +1,6 @@
 import unittest, pyperclip
 from user_class import User
+from credentials_class import User_credentials
 
 class TestContact(unittest.TestCase):
 
@@ -24,6 +25,8 @@ class TestContact(unittest.TestCase):
         self.new_user.save_new_user() # save_new_user is defined in the user_class...
         self.assertEqual(len(User.list_of_users),1)
         print(len(User.list_of_users))
+
+
 
 
     def tearDown(self):
@@ -60,7 +63,6 @@ class TestContact(unittest.TestCase):
         '''
         test to check if we can find a user by name and display information
         '''
-
         self.new_user.save_new_user()
         test_user = User("testy","Simpson")
         test_user.save_new_user()
