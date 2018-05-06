@@ -28,6 +28,15 @@ def display_users():
     '''
     return User.display_users()
 
+def user_validation():
+    print("enter your unsername: ")
+    user_n = input()
+    print("enter your password: ")
+    pass_w = input()
+    if User.valid_user(user_n,pass_w):
+        print("ok")
+    print("not okay")
+
 
 # def del_user(contact):
 #     '''
@@ -51,6 +60,7 @@ def display_users():
 
 def main_run ():
     print("Welcome to SECURA")
+    user_validation()
     while True:
         print("Use these short codes : cc - create a secure user account,\n dc - display contacts, fc -find a contact, ex -exit the contact list ")
         short_code = input().lower()
