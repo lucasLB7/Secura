@@ -1,5 +1,6 @@
 #!/usr/bin/env python3.6
 from user_class import User
+import time
 
 def create_user(u_name,p_word):
     """
@@ -10,7 +11,7 @@ def create_user(u_name,p_word):
 
     new_user = User(u_name,p_word)
     print("Hi there ",new_user.user_name)
-    print("Your account has been created..\nRemember to save your details")
+    print("Your account has been created..\nRemember to save your details\n")
     print("User name: ",new_user.user_name)
     print("Your password: ",new_user.password)
     return new_user
@@ -41,21 +42,31 @@ def user_validation():
         for user in valid_user():
             stored_list = [user.user_name,user.password]
             if stored_list == pass_list:
-                print("Yup")
-            else:
-                print("nop")
-                print('\n')
+                print(stored_list)
+                print(pass_list)
+                password_manager()
+
+def password_manager():
+    for user in valid_user():
+        print("Succesfully logged in, welcome to the password manager",user.user_name)
+        print("\nUse the following short codes: \nna - Create a new password,\nsp - Search passwords by website,\nvp - view passwords,\ndp - Delete password")
 
 
 
-def main_run ():
+
+def main_run():
     print("Welcome to SECURA")
+    time.sleep(1)
+    print("Checking if your are a new user..")
+    time.sleep(1)
     if display_users():
         user_validation()
+    print("New user..")
     pass
 
     while True:
-        print("Use these short codes : cc - create a secure user account,\n dc - display contacts, fc -find a contact, ex -exit the contact list ")
+        print("Use these short codes :\ncc - create a secure user account,\ndc - display contacts,\nli - log in,\nvp -view passwords (logged in only) ")
+        print("\nPress cc to create your account.")
         short_code = input().lower()
 
         if short_code == "cc":
@@ -93,6 +104,10 @@ def main_run ():
 
         elif short_code == "li":
             user_validation()
+
+def access_passwords():
+    pass
+
 
 
 
