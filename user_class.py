@@ -35,15 +35,21 @@ class User:
         return False
 
     @classmethod
+    def new_user(cls,user_name):
+        for user in cls.list_of_users:
+            if user.user_name == user_name:
+                    return True
+        return False
+
+    @classmethod
     def display_users(cls):
          return cls.list_of_users
 
     @classmethod
-    def valid_user(cls,user_name,password):
-        for user in cls.list_of_users:
-            if user.user_name == user_name and user.password == password:
-                return True
-            return False
+    def valid_user(cls):
+        return cls.list_of_users
+
+
 
 
 
