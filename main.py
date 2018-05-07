@@ -1,7 +1,8 @@
 #!/usr/bin/env python3.6
 from user_class import User
 from credentials_class import Credentials
-import time
+import time, csv, sys, pyperclip, random, string
+
 
 def create_user(u_name,p_word):
     """
@@ -23,6 +24,9 @@ def save_user(User):
     '''
     User.save_new_user()
 
+def save_credentials(Credentials):
+    Credentials.save_credentials()
+
 
 def display_users():
     '''
@@ -33,7 +37,15 @@ def display_users():
 def valid_user():
     return User.valid_user()
 
-def random_user():
+
+def password_generator(size=8, chars=string.ascii_letters + string.digits):
+    return ''.join(random.choice(chars) for i in range(size))
+
+
+
+
+
+
 
 def user_validation():
     if valid_user():
@@ -48,6 +60,8 @@ def user_validation():
                 print(stored_list)
                 print(pass_list)
                 password_manager()
+            print(stored_list)
+            print(pass_list)
 
 
 
@@ -114,7 +128,39 @@ def password_manager():
             short_code = input().lower()
 
             if short_code == 'np':
-                pass
+                    print('Please enter the website')
+                    website = input()
+                    print("PLease enter the user name for the account")
+                    username = input()
+                    print("Master passsword will be auto generated")
+                    time.sleep(0.5)
+                    password = password_generator()
+                    print("."*50)
+                    print(password)
+
+                    input_list = [website,username,password]
+
+                    time.sleep(2)
+                    return save_credentials(input_list)
+
+
+
+
+
+                    # with open('credentials.csv', 'a', newline='') as csvfile:
+                    #     spamwriter = csv.writer(csvfile, delimiter=' ',
+                    #                         quotechar='|', quoting=csv.QUOTE_MINIMAL)
+                    #
+                    #     # spamwriter.writerow(fieldnames)
+                    #     # spamwriter.writerow(user_data[0])
+                    #     # spamwriter.writerow("Username: "+user_data[1])
+                    #     # spamwriter.writerow("Password: "+user_data[2])
+                    #     # spamwriter.writerow("-"*20)
+                    #     spamwriter.writerow({fieldnames[0]: name, fieldnames[1]: user_data[1],fieldnames[2]:user_data[1]})
+                    #
+                    #     print("Your files have been recorded..")
+                    #     print("Your username: "+username+"\nYour name: "+name+"\nYour password: "+password))
+
 
 
 
