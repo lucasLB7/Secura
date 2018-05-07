@@ -12,10 +12,13 @@ def create_user(u_name,p_word):
     """
 
     new_user = User(u_name,p_word)
+    print("-"*50)
     print("Hi there ",new_user.user_name)
     print("Your account has been created..\nRemember to save your details\n")
     print("User name: ",new_user.user_name)
     print("Your password: ",new_user.password)
+    print("-"*50)
+    print("Key in: li : To log into your new account..")
     return new_user
 
 def save_user(User):
@@ -85,11 +88,13 @@ def main_run():
     if display_users():
         user_validation()
     print("New user..")
+    print("\nPress cc to create your account.")
     pass
 
     while True:
-        print("Use these short codes :\ncc - create a secure user account,\ndc - display contacts,\nli - log in,\nvp -view passwords (logged in only) ")
-        print("\nPress cc to create your account.")
+        print("Use these short codes : ")
+        print("-"*50)
+        print("cc - create a secure user account,\ndc - display contacts,\nli - log in")
         short_code = input().lower()
 
         if short_code == "cc":
@@ -134,7 +139,9 @@ def password_manager():
     for user in valid_user():
         print("Succesfully logged in, welcome to the password manager",user.user_name)
         while True:
-            print("\nUse the following short codes: \nnp - Create a new password,\nsp - Search passwords by website,\nvp - view passwords,\ndp - Delete password")
+            print("\nUse the following short codes: ")
+            print("-"*50)
+            print("nnp - Create a new password,\nsp - Search passwords by website,\nvp - view passwords,\ndp - Delete password")
             short_code = input().lower()
 
             if short_code == 'np':
