@@ -24,6 +24,16 @@ def save_user(User):
     '''
     User.save_new_user()
 
+def create_credentials(website , user_name_cr , password_cr):
+    new_creds= Credentials(website , user_name_cr , password_cr)
+    print("Your details has been stored.\nRemember to save your details\n")
+    print("website: ",new_creds.website)
+    print("Your password: ",new_creds.password_cr)
+    print("Your user name: ",new_creds.user_name_cr)
+
+    return new_creds
+
+
 def save_credentials(Credentials):
     Credentials.save_credentials()
 
@@ -128,20 +138,20 @@ def password_manager():
             short_code = input().lower()
 
             if short_code == 'np':
-                    print('Please enter the website')
-                    website = input()
-                    print("PLease enter the user name for the account")
-                    username = input()
-                    print("Master passsword will be auto generated")
-                    time.sleep(0.5)
-                    password = password_generator()
-                    print("."*50)
-                    print(password)
+                print('Please enter the website')
+                website = input()
+                print("PLease enter the user name for the account")
+                user_name_cr = input()
+                print("Master passsword will be auto generated")
+                time.sleep(0.5)
+                password_cr = password_generator()
+                print("."*50)
+                print(password_cr)
 
-                    input_list = [website,username,password]
-
-                    time.sleep(2)
-                    return save_credentials(input_list)
+                input_list = [website,user_name_cr,password_cr]
+                time.sleep(2)
+                save_credentials(create_credentials(input_list))
+            pass
 
 
 
@@ -164,8 +174,6 @@ def password_manager():
 
 
 
-def access_passwords():
-    pass
 
 
 
