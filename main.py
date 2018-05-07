@@ -148,9 +148,8 @@ def password_manager():
                 print("."*50)
                 print(password_cr)
 
-                input_list = [website,user_name_cr,password_cr]
                 time.sleep(2)
-                save_credentials(create_credentials(input_list))
+                save_credentials(create_credentials(website,user_name_cr,password_cr))
             pass
 
 
