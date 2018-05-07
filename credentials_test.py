@@ -1,5 +1,7 @@
-import unittest
+import unittest,csv, sys, pyperclip
 from credentials_class import Credentials
+import credentials
+
 
 
 
@@ -23,7 +25,7 @@ class test_credentials(unittest.TestCase):
         """
         with open("test.txt","r") as handle:
             data = handle.read()
-            self.assertEqual(data,readfiles.read_file("test.txt"))
+            self.assertEqual(data,readfiles.read_file("credentials.txt"))
 
 
 
