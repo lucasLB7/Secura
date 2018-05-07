@@ -18,5 +18,5 @@ class Credentials():
     def delete_credentials(self):
         Credentials.list_of_credentials.remove(self)
 
-
-    
+    def save_credentials_to_file(self):
+        pass
