@@ -47,6 +47,10 @@ def display_users():
     '''
     return User.display_users()
 
+
+def display_credentials():
+    return Credentials.view_credentials()
+
 def valid_user():
     return User.valid_user()
 
@@ -88,13 +92,13 @@ def main_run():
     if display_users():
         user_validation()
     print("New user..")
-    print("\nPress cc to create your account.")
+    print("\n Press cc to create your account.")
     pass
 
     while True:
         print("Use these short codes : ")
         print("-"*50)
-        print("cc - create a secure user account,\ndc - display contacts,\nli - log in")
+        print("cc - create a secure user account,\n dc - display contacts,\n li - log in")
         short_code = input().lower()
 
         if short_code == "cc":
@@ -139,9 +143,9 @@ def password_manager():
     for user in valid_user():
         print("Succesfully logged in, welcome to the password manager",user.user_name)
         while True:
-            print("\nUse the following short codes: ")
+            print(" \n Use the following short codes: ")
             print("-"*50)
-            print("nnp - Create a new password,\nsp - Search passwords by website,\nvp - view passwords,\ndp - Delete password")
+            print("np - Create a new password,\n sp - Search passwords by website,\n vp - view passwords,\n dp - Delete password")
             short_code = input().lower()
 
             if short_code == 'np':
@@ -157,7 +161,15 @@ def password_manager():
 
                 time.sleep(2)
                 save_credentials(create_credentials(website,user_name_cr,password_cr))
-            pass
+
+            elif short_code == 'vp':
+                print("View your passwords")
+                time.sleep(2)
+                for creds in display_credentials():
+                    print('website: ' f"{creds.website}")
+                    print('Username: ' f"{creds.user_name_cr}")
+                    print('Password: ' f"{creds.password_cr}")
+
 
 
 
