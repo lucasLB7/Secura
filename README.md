@@ -1,6 +1,21 @@
 # SECURA PROJECT #
-## Pre-Alpha V -1.01 ##
+## Pre-Alpha V 1.02 ##
 ========================
+
+# INSTALLING & RUN APP #
+
+To  run this app, make sure you have python 3 installed on your computer.
+clone the app from the github repository into you computer with the command:
+```git clone https://github.com/lucasLB7/Secura.git```
+**Remember to do this in your the folder you want to clone into**
+
+Once cloning is done, we are nearly there...
+    - In the root directory of the app (**where you have the main.py**).
+    - Run the following command in your command:
+        ```python3 main.py```
+
+    This will run the application locally on your machine..
+
 # INTRODUCTION #
 
 - The SECURA project is designed as an introductory python 3 project to classes and OOP.
@@ -14,12 +29,16 @@ The SECURA application must be cloned from GitHub repo:
 
 Once cloning is complete, run the main.py file in command using the prefix __python3.6__.
 
+eg. 
+    ```python3 main.py```
+
 
 # WHAT YOU'LL SEE #
 
 On running the program you will be greeted by a welcome sign and a __check to see if a user exists__.
 -If a user does exist, you are taken to the login.
 -If a user does not exist, you are prompted with a sign up prompt, to create a __user__.
+As no databases are used for this, there will not be any user.
 
 ```
 Welcome to SECURA
@@ -69,3 +88,23 @@ Cannot leave a blank password..
 Welcome to SECURA
 Checking if your are a new user..
 ```
+
+## I a correct set of credentials is entered:
+
+You can now log in to the application 
+
+## Saving and checking your website credentials
+
+Press vp after creating a new credentials object to view the details.
+The password is generated automatically and is stored for you.
+
+To **view the saved credentials**, enter **vc** to display all created credentials.
+
+
+
+
+## CREDITS
+
+- Moringa LMS
+- Stackoverflow
+- Python documentation

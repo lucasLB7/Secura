@@ -145,7 +145,7 @@ def password_manager():
         while True:
             print(" \n Use the following short codes: ")
             print("-"*50)
-            print("np - Create a new password,\n sp - Search passwords by website,\n vp - view passwords,\n dp - Delete password")
+            print("np - Create a new password,\n vp - view passwords)
             short_code = input().lower()
 
             if short_code == 'np':
